@@ -10,7 +10,7 @@
 
 	$con->close();
 
-	echo "<h2 style='text-align:center;margin-top:10%;'>Obrigado por usar nosso sistema de avaliação!</h2>";
+	echo "<h2 style='text-align:center;margin-top:10%; color:#431887;'>Obrigado por usar nosso sistema de avaliação!</h2>";
 	echo "<br><center><img src='logo.jpg' width='200px' alt='prefeitura de mesquita' /></center>";
 ?>
 
