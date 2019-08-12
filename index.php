@@ -7,9 +7,9 @@
 
 </head>
 <body>
-	<table class='table table-stripped w-50' style='margin:auto;'>
+	<table class='table table-stripped w-75' style='margin:auto;'>
 		<tr>
-			<th class='title h2 text-center' style='color:#a18635;'>
+			<th class='title h1 text-center' style='color:#a18635;'>
 			<img src="logo.jpg" width='120px' style='margin:10px;'>
 			<br>
 				Como foi seu atendimento?
@@ -68,28 +68,28 @@
 	#excelente{
 		background-color:#431887;
 		color:#eee;
-		width:250px;
+		width:300px;
 		font-size:21pt;
 		text-shadow:1px 1px 1px black;
 	}	
 	#bom{
 		background-color:green;
 		color:#eee;
-		width:250px;
+		width:300px;
 		font-size:21pt;
 		text-shadow:1px 1px 1px black;
 	}	
 	#regular{
 		background-color:orange;
 		color:#eee;
-		width:250px;
+		width:300px;
 		font-size:21pt;
 		text-shadow:1px 1px 1px black;
 	}	
 	#ruim{
 		background-color:red;
 		color:#eee;
-		width:250px;
+		width:300px;
 		font-size:21pt;
 		text-shadow:1px 1px 1px black;
 	}

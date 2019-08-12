@@ -10,8 +10,9 @@
 
 	$con->close();
 
-	echo "<h2 style='text-align:center;margin-top:10%; color:#431887;'>Obrigado por usar nosso sistema de avaliação!</h2>";
-	echo "<br><center><img src='logo.jpg' width='200px' alt='prefeitura de mesquita' /></center>";
+	echo "<h1 style='text-align:center;margin-top:10%; color:#431887;'>Obrigado por usar nosso sistema de avaliação, nos ajudando a melhorar o serviço público prestado!</h1>";
+	echo "<br><center><img src='logo.jpg' width='220px' alt='prefeitura de mesquita' /></center>";
+	echo "<h2 style='text-align:center; color:#431887;'>Equipe de desenvolvimento da prefeitura de mesquita</h2>";
 ?>
 
 <script type="text/javascript">
