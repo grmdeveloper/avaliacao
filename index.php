@@ -4,10 +4,15 @@
 	<title>Avaliação</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<script type="text/javascript">
+	doc
+</script>
 </head>
 <body>
 	<table class='table table-stripped'>
 		<tr>
+			<img src="logo.jpg" width='55px' style='margin:10px'>
 			<th class='title h2 text-center'>
 				Como foi seu atendimento?
 			</th>	
@@ -61,7 +66,5 @@
 		color:#eee;
 		text-shadow:1px 1px 1px black;
 	}
-
 </style>
-
 </html>
