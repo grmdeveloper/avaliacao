@@ -4,7 +4,7 @@
 	require"connection.php";
 
 	
-	$stmt = "INSERT INTO avaliacoes (avaliacao) VALUES ('$valor')";
+	$stmt = "INSERT INTO avaliacoes (valor) VALUES ('$valor')";
 
 	$con->query($stmt);
 
