@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lg='pt-br'>
+<html lang="pt-br">
 <head>
 	<title>Avaliação</title>
-	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 </head>
 <body>
@@ -13,7 +13,7 @@
 			<img src="logo.jpg" width='120px' style='margin:10px;'>
 			<br>
 				Como foi seu atendimento
-				<br> na clinica da família Walter Borges?
+				<br> na Clínica da Família Walter Borges?
 			</th>	
 		</tr>
 			
@@ -59,6 +59,9 @@
 </body>
 
 <style type="text/css">
+	body {
+		background-color:#fff;
+	}
 	.table{
 		align-items:left;
 	}
@@ -77,7 +80,7 @@
 		background-color:green;
 		color:#eee;
 		width:300px;
-		font-size:21pt;
+		font-size:21pt;	
 		text-shadow:1px 1px 1px black;
 	}	
 	#regular{
