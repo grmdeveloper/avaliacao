@@ -12,8 +12,7 @@
 			<th class='title h1 text-center' style='color:#a18635;'>
 			<img src="logo.jpg" width='120px' style='margin:10px;'>
 			<br>
-				Como foi seu atendimento
-				<br> na clinica da família Walter Borges?
+				Como foi seu atendimento? 
 			</th>	
 		</tr>
 			
