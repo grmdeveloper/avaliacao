@@ -1,4 +1,8 @@
 <?php 
+
+
+
+
 echo "<link href='css/style.css' type='text/css'> ";
 require"connection.php";
 if(isset($_GET['u']))
@@ -47,6 +51,33 @@ $con->close();
 header("Content-type:text/html; charset=utf-8");
 
 require"layout.php";
+
+
+$password=$_POST['password'];
+if($password != "tec_mes1234"){
+	$content="
+	<div class='text-center'>
+		<img src='../logo.jpg' width='100px'>
+		<div class='card w-25' style='margin:10px auto; border:1px solid #402010;'>
+			<div class='card-header h4'>
+				Login
+			</div>
+
+				<div class='card-body'>
+					<form method='post'>
+					<label>
+						Senha
+						<input type='password' name='password' class='form-control'>
+					</label>
+					<input type='submit' class='btn btn-warning'>
+					</form>
+				
+				</div>
+		</div>
+	</div>
+	";
+}
+elseif($password == "tec_mes1234"){
 $content="
 <img src='../logo.jpg' width='100px' style='margin-left:47%;'>
 <h3 class='alert alert-primary h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>
@@ -113,25 +144,26 @@ $content.="<div class='card w-25'>
 
 
 
-$content.="
-<div class='card'>
-	<div class='card-header'>
-		<h4 class='card-title h4'>Unidades no sistema</h4>
-	</div>
-	<div class='card-body'>
-	";
-foreach($unidades as $unidade){
-	$content.="<a class='btn btn-warning btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
+	$content.="
+	<div class='card'>
+		<div class='card-header'>
+			<h4 class='card-title h4'>Unidades no sistema</h4>
+		</div>
+		<div class='card-body'>
+		";
+	foreach($unidades as $unidade){
+		$content.="<a class='btn btn-warning btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
+	}
+
+	$content.="
+		</div>";
+
+	$content.="</div>";
 }
-
-$content.="
-	</div>";
-
-$content.="</div>";
 echo $header;
 echo $content;
 echo $footer;
 
-include "classes/unidade.php";
+
 ?>
 
