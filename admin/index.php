@@ -40,10 +40,9 @@ while( $row = $result->fetch_assoc() ){
 	if($row['valor']=='BOM')
 		$bom++;
 	if($row['valor']=='REGULAR')
-		$regular++;	
+		$regular++;
 	if($row['valor']=='RUIM')
 		$ruim++;
-	
 } 
 
 $con->close();
@@ -52,9 +51,12 @@ header("Content-type:text/html; charset=utf-8");
 
 require"layout.php";
 
+session_start();
+if(isset($_POST['password'])){
+	$_SESSION['password']=$_POST['password'];
+}
 
-$password=$_POST['password'];
-if($password != "tec_mes1234"){
+if($_SESSION['password']!="tec_mes1234"){
 	$content="
 	<div class='text-center'>
 		<img src='../logo.jpg' width='100px'>
@@ -77,7 +79,7 @@ if($password != "tec_mes1234"){
 	</div>
 	";
 }
-elseif($password == "tec_mes1234"){
+elseif($_SESSION['password'] == "tec_mes1234"){
 $content="
 <img src='../logo.jpg' width='100px' style='margin-left:47%;'>
 <h3 class='alert alert-primary h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>
