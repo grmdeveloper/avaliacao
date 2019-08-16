@@ -14,7 +14,7 @@ require "../connection.php";
 	
 	if($result){
 		echo "Tabela criada com sucesso <br>";
-		$stmt = "INSERT INTO configs (nome,titulo,motd) VALUES ('Prefeitura','Como foi seu atendimento?','Obrigado por usar nosso sistema, estaremos sempre buscando aprimorar')";
+		$stmt = "INSERT INTO configs (nome,titulo,motd) VALUES ('Prefeitura','Como foi seu atendimento?','Obrigado por utilizar nosso sistema, sua opniao e importante para nos')";
 		$result = $con->query($stmt);
 		if($result){
 			echo "Seed inserida com sucesso";
