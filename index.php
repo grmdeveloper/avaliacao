@@ -1,21 +1,22 @@
 <?php 
+
+	header('Content-type:text/html; charset=utf-8');
+	
 	require"connection.php";
-	if(isset($_GET['u'])){
-		header('Content-type:text/html; charset=utf-8');
+	
+	if(isset($_GET['u']))
 		$unidadeid = $_GET['u'];
-		$stmt = "SELECT * FROM configs WHERE id='$unidadeid'";
-		$result = $con->query($stmt);
+	else $unidadeid = 1;
 
-		while($row=$result->fetch_assoc()){
-			$id=		$row['id'];
-			$unidade=	$row['nome'];
-			$titulo=	$row['titulo'];
-			$motd= 		$row['motd'];
 
-		}
-	}
-	else{
-	//	echo "Selecione a unidade que você se encontra";
+	$stmt = "SELECT * FROM configs WHERE id='$unidadeid'";
+	$result = $con->query($stmt);
+
+	while($row=$result->fetch_assoc()){
+		$id=		$row['id'];
+		$unidade=	$row['nome'];
+		$titulo=	$row['titulo'];
+		$motd= 		$row['motd'];
 	}
 	$con->close();
 ?>

@@ -9,13 +9,17 @@ require "../connection.php";
 	titulo text NOT NULL, 
 	motd text,
 	updated_at timestamp DEFAULT current_timestamp)";
+	
 	$result=$con->query($stmt);
+	
 	if($result){
 		echo "Tabela criada com sucesso <br>";
-	}
-	else{
-		echo "Erro ao criar tabela ";
-	}
+		$stmt = "INSERT INTO configs (nome,titulo,motd) VALUES ('Prefeitura','Como foi seu atendimento?','Obrigado por usar nosso sistema, estaremos sempre buscando aprimorar')";
+		$result = $con->query($stmt);
+		if($result){
+			echo "Seed inserida com sucesso";
+		}	else echo "Erro ao inserir Seed";
+	} 	else echo "Erro ao criar tabela ";
 
 
 	$stmt="CREATE TABLE IF NOT EXISTS avaliacoes(
@@ -26,13 +30,13 @@ require "../connection.php";
 	updated_at timestamp DEFAULT current_timestamp,
 	CONSTRAINT fk_unidadeId FOREIGN KEY(unidadeId) REFERENCES configs(id)
 	)";
+	
 	$result=$con->query($stmt);
+	
 	if($result){
 		echo "Tabela criada com sucesso <br>";
-	}
-	else{
-		echo "Erro ao criar tabela ";
-	}
+	}else echo "Erro ao criar tabela ";
+	
 
 	$con->close();
 ?>

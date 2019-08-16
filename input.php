@@ -4,10 +4,11 @@
 	
 	$unidadeid=$_POST['id'];
 	$valor=$_POST['avaliacao'];
+	$ip=strval($_SERVER["REMOTE_ADDR"]);
 
 
 	
-	$stmt = "INSERT INTO avaliacoes (unidadeId, valor) VALUES ('$unidadeid','$valor')";
+	$stmt = "INSERT INTO avaliacoes (unidadeId, valor, ip) VALUES ('$unidadeid','$valor','$ip')";
 
 	$con->query($stmt);
 

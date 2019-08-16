@@ -1,8 +1,21 @@
 <?php 
-
+echo "<link href='css/style.css' type='text/css'> ";
 require"connection.php";
+if(isset($_GET['u']))
+	$uSelected = $_GET['u'];
+else $uSelected = 1;
 
-$stmt= "SELECT * FROM configs WHERE id=1 ";
+$stmt="SELECT * FROM configs";
+$result=$con->query($stmt);
+
+$x=0;
+$unidades=array();
+while($row = $result->fetch_assoc()){
+	$unidades[$x]=$row;
+	$x++;
+}
+
+$stmt= "SELECT * FROM configs WHERE id='$uSelected' ";
 $result= $con->query($stmt);
 
 while( $row = $result->fetch_assoc() ){
@@ -12,7 +25,7 @@ while( $row = $result->fetch_assoc() ){
 	$motd=		$row['motd'];
 }
 
-$stmt= "SELECT * FROM avaliacoes WHERE unidadeId=1";
+$stmt= "SELECT * FROM avaliacoes WHERE unidadeId='$uSelected' ";
 $result= $con->query($stmt);
 
 $excelente=0;$bom=0;$regular=0;$ruim=0;
@@ -35,10 +48,13 @@ header("Content-type:text/html; charset=utf-8");
 
 require"layout.php";
 $content="
-<div class='flex'>
-<h3 class='jumbotron h3'>Dashboard</h3>";
+<img src='../logo.jpg' width='100px' style='margin-left:47%;'>
+<h3 class='alert alert-primary h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>
+ Dashboard
+</h3>";
 $content.="
-<div class='card w-50 text-center align-self-center'>
+<div class='d-inline-flex justify-content-center'>
+<div class='card w-50 text-center'>
 	<div class='card-header'>
 		<h4 class='card-title'>Opções Gerais</h4>
 	</div>
@@ -76,19 +92,40 @@ $content.="
 
 $content.="<div class='card w-25'>
 <div class='card-header'>
-	<h3 class='h3 card-title'>Informações</h3>
+	<h4 class='h4 card-title'>Informações</h4>
 </div>
 <div class='card-body'>
 	<div>
-		<h5>Avaliações</h5>
-		<span class='badge'>Excelente ".$excelente." </span>
-		<span class='badge'>Bom ".$bom." </span>
-		<span class='badge'>Regular ".$regular." </span>
-		<span class='badge'>Ruim ".$ruim." </span>
+		<p>Avaliações</p>
+		<span class='badge badge-success w-50 text-left'>Excelente </span>
+		<span class='badge badge-success'>"		.$excelente." 		</span><br>
+		<span class='badge badge-primary w-50 text-left'>Bom  </span>
+		<span class='badge badge-primary'>"		.$bom."			</span><br>
+		<span class='badge badge-warning w-50 text-left'>Regular </span>
+		<span class='badge badge-warning'>"		.$regular."  </span><br>
+		<span class='badge badge-danger w-50 text-left'>Ruim  </span>
+		<span class='badge badge-danger'>"		.$ruim."	 	</span><br>
 
 	</div>
 </div>
 ";
+
+
+
+
+$content.="
+<div class='card'>
+	<div class='card-header'>
+		<h4 class='card-title h4'>Unidades no sistema</h4>
+	</div>
+	<div class='card-body'>
+	";
+foreach($unidades as $unidade){
+	$content.="<a class='btn btn-warning btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
+}
+
+$content.="
+	</div>";
 
 $content.="</div>";
 echo $header;
@@ -97,3 +134,4 @@ echo $footer;
 
 include "classes/unidade.php";
 ?>
+
