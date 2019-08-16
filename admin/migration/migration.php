@@ -3,7 +3,12 @@
 require "../connection.php";
 
 
-	$stmt="CREATE TABLE IF NOT EXISTS configs (id INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(255) NOT NULL UNIQUE, titulo text NOT NULL, motd text)";
+	$stmt="CREATE TABLE IF NOT EXISTS configs (
+	id INT PRIMARY KEY AUTO_INCREMENT, 
+	nome VARCHAR(255) NOT NULL UNIQUE, 
+	titulo text NOT NULL, 
+	motd text,
+	updated_at timestamp DEFAULT current_timestamp)";
 	$result=$con->query($stmt);
 	if($result){
 		echo "Tabela criada com sucesso <br>";
@@ -18,6 +23,7 @@ require "../connection.php";
 	unidadeId int,
 	valor enum('EXCELENTE','BOM','REGULAR','RUIM'),
 	ip varchar(50),
+	updated_at timestamp DEFAULT current_timestamp,
 	CONSTRAINT fk_unidadeId FOREIGN KEY(unidadeId) REFERENCES configs(id)
 	)";
 	$result=$con->query($stmt);
