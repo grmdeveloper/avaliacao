@@ -3,6 +3,10 @@
 	require "connection.php";
 	$id=$_POST['id'];
 
+
+	$stmt= "DELETE FROM avaliacoes WHERE unidadeId = '$id'";
+	$con->query($stmt);
+
 	$stmt="DELETE FROM configs WHERE id='$id'";
 	$result = $con->query($stmt);
 
