@@ -11,4 +11,5 @@
 
 	else
 		echo "A requisição não pode ser completada <a href='/avaliacao/admin'>voltar</a>";
+		echo $con->mysql_error;
 ?>
