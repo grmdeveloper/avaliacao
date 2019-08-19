@@ -27,6 +27,7 @@ while( $row = $result->fetch_assoc() ){
 	$unidade=	$row['nome'];
 	$titulo= 	$row['titulo'];
 	$motd=		$row['motd'];
+	$updated = 	date( 'd/m/y G:i:s',strtotime($row['updated_at']) );
 }
 
 $stmt= "SELECT * FROM avaliacoes WHERE unidadeId='$uSelected' ";
@@ -153,6 +154,8 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 			<br>
 			<a href='http://".$_SERVER['HTTP_HOST']."/avaliacao/?u=".$id."' 
 			target='_BLANK' class='badge'>Página de avaliação</a></div>
+
+			<div class='badge'>Atualizado em: ".$updated."</div>
 		</div>
 
 	</div>";

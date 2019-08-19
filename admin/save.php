@@ -6,9 +6,9 @@ $id=$_POST['id'];
 $nome=trim($_POST['unidade']);
 $titulo=trim($_POST['titulo']);
 $motd=trim($_POST['motd']);
+$date =date('Y-m-d G:i:s');
 
-
-$con->query("UPDATE configs SET nome='$nome',titulo='$titulo',motd='$motd' WHERE id='$id' ");
+$con->query("UPDATE configs SET nome='$nome',titulo='$titulo',motd='$motd',updated_at='$date' WHERE id='$id' ");
 $con->close();
 
 header('location:index.php');
