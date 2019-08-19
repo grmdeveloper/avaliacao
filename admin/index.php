@@ -218,7 +218,6 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 		</div>
 	";
 
-
 	$content.="
 	<div class='card w-50 delete-screen' style='position:absolute; z-index:2; top:25%; left:25%; display:none;'>
 		<div class='card-header'>
@@ -237,7 +236,7 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 			value='".$unidade['nome']."'
 			type='submit'></a>
 
-			<input hidden 
+			<input hidden
 			name='id'
 			value='".$unidade['id']."'
 			type='number'></a>
