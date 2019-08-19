@@ -133,7 +133,7 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	";
 
 	$content.="
-	<div class='card'>
+	<div class='card' style='min-width:300px'>
 		<div class='card-header'>
 			<h5 class='card-title h5'>Informações</h5>
 		</div>
@@ -162,11 +162,11 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 
 
 	$content.="
-	<div class='card'>
+	<div class='card' style='max-width:280px;'>
 		<div class='card-header'>
 			<h5 class='card-title h5'>Unidades no sistema</h5>
 		</div>
-		<div class='card-body'>
+		<div class='card-body'  style='max-height:280px; overflow-y:scroll;'>
 		";
 	foreach($unidades as $unidade){
 		$content.="<a class='btn btn-dark btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
