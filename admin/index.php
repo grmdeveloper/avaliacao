@@ -97,7 +97,7 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	<div class='d-inline-flex justify-content-center'>
 	<div class='card w-50 text-center'>
 		<div class='card-header'>
-			<h4 class='card-title'>Opções Gerais</h4>
+			<h5 class='card-title h5'>Opções Gerais</h5>
 		</div>
 
 		<div class='card-body '>
@@ -134,7 +134,7 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	$content.="
 	<div class='card'>
 		<div class='card-header'>
-			<h4 class='card-title h4'>Informações</h4>
+			<h5 class='card-title h5'>Informações</h5>
 		</div>
 		<div class='card-body'>
 
@@ -161,12 +161,12 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	$content.="
 	<div class='card'>
 		<div class='card-header'>
-			<h4 class='card-title h4'>Unidades no sistema</h4>
+			<h5 class='card-title h5'>Unidades no sistema</h5>
 		</div>
 		<div class='card-body'>
 		";
 	foreach($unidades as $unidade){
-		$content.="<a class='btn btn-warning btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
+		$content.="<a class='btn btn-dark btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
 	}
 
 	$content.="
@@ -178,7 +178,7 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	$content.="
 		<div class='card'>
 			<div class='card-header'>
-				<h4 class='h4'>CRUD</h4>
+				<h5 class='h5'>CRUD</h5>
 			</div>
 			<div class='card-body'>
 				<button class='btn btn-primary btn-block' onclick='showform()'>Nova Unidade</button>
@@ -190,9 +190,9 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	$content.="
 		<div class='card w-50 form-create' style='position:absolute; z-index:3; top:25%; left:25%; display:none;'>
 			<div class='card-header'>
-				<h4 class='h4'>Criar  
+				<h5 class='h5'>Criar  
 					<a class='badge badge-danger' href='#' style='float:right;' onclick='hideform()'> X </a>
-				</h4>
+				</h5>
 			</div>
 			<div class='card-body'>
 				<form id='create'>
@@ -219,9 +219,9 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	$content.="
 	<div class='card w-50 delete-screen' style='position:absolute; z-index:2; top:25%; left:25%; display:none;'>
 		<div class='card-header'>
-			<h4 class='alert alert-danger h4'>DELETAR unidade
+			<h5 class='alert alert-danger h5'>DELETAR unidade
 			<a class='badge badge-danger' href='#' style='float:right;' onclick='hidedelete()'>X</a>
-			</h4>
+			</h5>
 		</div>
 		<div class='card-body'>
 	";
