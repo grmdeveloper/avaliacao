@@ -5,7 +5,7 @@
 
 	$stmt="DELETE FROM configs WHERE id='$id'";
 	$result = $con->query($stmt);
-	
+
 	if($result)
 		header("location:/avaliacao/admin");
 

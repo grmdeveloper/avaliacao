@@ -64,7 +64,6 @@
 		margin: 0 15px;
 		display:inline-block;
 	}#menu li:first-child{ margin:0; }
-
 	#menu a {
 		text-decoration: none;
 		text-transform: none;

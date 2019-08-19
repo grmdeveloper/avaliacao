@@ -29,7 +29,7 @@ while( $row = $result->fetch_assoc() ){
 	$motd=		$row['motd'];
 	$updated = 	date( 'd/m/y G:i:s',strtotime($row['updated_at']) );
 }
- 
+
 $stmt= "SELECT * FROM avaliacoes WHERE unidadeId='$uSelected' ";
 $result= $con->query($stmt);
 
