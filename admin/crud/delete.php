@@ -10,5 +10,5 @@
 		header("location:/avaliacao/admin");
 
 	else
-		echo "A requisição não pode ser completada <a href='/avaliacao/admin'></a>";
+		echo "A requisição não pode ser completada <a href='/avaliacao/admin'>Voltar</a>";
 ?>

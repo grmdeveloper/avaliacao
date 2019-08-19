@@ -30,8 +30,9 @@
 				data:dados,
 
 				success:function(data){
-				$('.save').attr('disabled',false);
-				alert(data);
+					$('.save').attr('disabled',false);
+					alert(data);
+					window.location.reload();
 				},
 				fail:function(data){	
 				$('.save').attr('disabled',false);
