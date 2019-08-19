@@ -10,6 +10,6 @@
 		header("location:/avaliacao/admin");
 
 	else
-		echo "A requisição não pode ser completada <a href='/avaliacao/admin'>voltar</a>";
-		echo $con->mysql_error;
+		echo "A requisição não pode ser completada <a href='/avaliacao/admin'>voltar</a> <br>";
+		echo $con->error;
 ?>
