@@ -7,7 +7,7 @@
 	$ip=strval($_SERVER["REMOTE_ADDR"]);
 
 
-	
+	 
 	$stmt = "INSERT INTO avaliacoes (unidadeId, valor, ip) VALUES ('$unidadeid','$valor','$ip')";
 
 	$con->query($stmt);
