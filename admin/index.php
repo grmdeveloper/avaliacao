@@ -80,70 +80,82 @@ if($_SESSION['password']!="tec_mes1234"){
 	";
 }
 elseif($_SESSION['password'] == "tec_mes1234"){
-$content="
-<img src='../logo.jpg' width='100px' style='margin-left:47%;'>
-<h3 class='alert alert-primary h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>
- Dashboard
-</h3>";
-$content.="
-<div class='d-inline-flex justify-content-center'>
-<div class='card w-50 text-center'>
-	<div class='card-header'>
-		<h4 class='card-title'>Opções Gerais</h4>
-	</div>
+	$content="
 
-	<div class='card-body '>
-		<form action='save.php' method='post'>
-		<input type='number' name='id' value='".$id."' hidden>
-			
-			<label class='w-75'>
-				<h5 class='h5 badge'>
-				Nome da Unidade
-				</h5>
-					<input name='unidade' type='text' class='form-control' value='".$unidade."'>			
-			</label>			
-
-			<label class='w-75'>
-				<h5 class='h5 badge'>
-				Título da avaliação
-				</h5>
-					<input name='titulo' class='form-control' value='".$titulo."'>			
-			</label>
-			
-			<label class='w-75'>
-				<h5 class='h5 badge'>
-				Mensagem de agradecimento
-				</h5>
-					<input name='motd' class='form-control' value='".$motd."'>
-			</label>
-
-			<input type='submit' value='salvar' class='btn btn-block btn-primary'>
-		</form>
-	</div>
-</div>
-";
-
-$content.="<div class='card w-25'>
-<div class='card-header'>
-	<h4 class='h4 card-title'>Informações</h4>
-</div>
-<div class='card-body'>
 	<div>
-		<p>Avaliações</p>
-		<span class='badge badge-success w-50 text-left'>Excelente </span>
-		<span class='badge badge-success'>"		.$excelente." 		</span><br>
-		<span class='badge badge-primary w-50 text-left'>Bom  </span>
-		<span class='badge badge-primary'>"		.$bom."			</span><br>
-		<span class='badge badge-warning w-50 text-left'>Regular </span>
-		<span class='badge badge-warning'>"		.$regular."  </span><br>
-		<span class='badge badge-danger w-50 text-left'>Ruim  </span>
-		<span class='badge badge-danger'>"		.$ruim."	 	</span><br>
-
+		<img src='../logo.jpg' width='50px' style='margin-left:4%;'>
+		<ul id='menu'>
+			<li><a href='index.php'>Dashboard</a></li>
+			<li><a href='logout.php'>Sair</a></li>
+		</ul>
 	</div>
-</div>
-";
 
+	<h3 class='alert alert-primary h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>
+	 Dashboard
+	</h3>";
+	$content.="
+	<div class='d-inline-flex justify-content-center'>
+	<div class='card w-50 text-center'>
+		<div class='card-header'>
+			<h4 class='card-title'>Opções Gerais</h4>
+		</div>
 
+		<div class='card-body '>
+			<form action='save.php' method='post'>
+			<input type='number' name='id' value='".$id."' hidden>
+				
+				<label class='w-75'>
+					<h5 class='h5 badge'>
+					Nome da Unidade
+					</h5>
+						<input name='unidade' type='text' class='form-control' value='".$unidade."'>			
+				</label>			
+
+				<label class='w-75'>
+					<h5 class='h5 badge'>
+					Título da avaliação
+					</h5>
+						<input name='titulo' class='form-control' value='".$titulo."'>			
+				</label>
+				
+				<label class='w-75'>
+					<h5 class='h5 badge'>
+					Mensagem de agradecimento
+					</h5>
+						<input name='motd' class='form-control' value='".$motd."'>
+				</label>
+
+				<input type='submit' value='salvar' class='btn btn-block btn-primary'>
+			</form>
+		</div>
+	</div>
+	";
+
+	$content.="
+	<div class='card'>
+		<div class='card-header'>
+			<h4 class='card-title h4'>Informações</h4>
+		</div>
+		<div class='card-body'>
+
+			<p>Avaliações</p>
+			<span class='badge badge-success w-50 text-left'>Excelente </span>
+			<span class='badge badge-success'>"		.$excelente." 		</span><br>
+			<span class='badge badge-primary w-50 text-left'>Bom  </span>
+			<span class='badge badge-primary'>"		.$bom."			</span><br>
+			<span class='badge badge-warning w-50 text-left'>Regular </span>
+			<span class='badge badge-warning'>"		.$regular."  </span><br>
+			<span class='badge badge-danger w-50 text-left'>Ruim  </span>
+			<span class='badge badge-danger'>"		.$ruim."	 	</span><br>
+			<br>
+			<span class='badge'>ID ".$id."</span>
+			<div><b class='badge'>endereço</b> 
+			<br>
+			<a href='http://".$_SERVER['HTTP_HOST']."/avaliacao/?u=".$id."' 
+			target='_BLANK' class='badge'>Página de avaliação</a></div>
+		</div>
+
+	</div>";
 
 
 	$content.="
@@ -160,12 +172,76 @@ $content.="<div class='card w-25'>
 	$content.="
 		</div>";
 
-	$content.="</div>";
+	$content.="
+	</div>";
+
+	$content.="
+		<div class='card'>
+			<div class='card-header'>
+				<h4 class='h4'>CRUD</h4>
+			</div>
+			<div class='card-body'>
+				<button class='btn btn-primary btn-block' onclick='showform()'>Nova Unidade</button>
+				<button class='btn btn-danger btn-block' onclick='showdelete()'>Deletar Unidade</button>
+			</div>
+		</div>";
+
+
+	$content.="
+		<div class='card w-50 form-create' style='position:absolute; z-index:3; top:25%; left:25%; display:none;'>
+			<div class='card-header'>
+				<h4 class='h4'>Criar  
+					<a class='badge badge-danger' href='#' style='float:right;' onclick='hideform()'> X </a>
+				</h4>
+			</div>
+			<div class='card-body'>
+				<form id='create'>
+				<label class='w-100'>
+					Nome da unidade
+					<input type='text' name='nome' class='form-control'/>
+				</label>		
+				<label class='w-100'>
+					Título do totem
+					<input type='text' name='titulo' class='form-control' value='Como foi seu atendimento na unidade ?'/>
+				</label>		
+				<label class='w-100'>
+					Mensagem de agradecimento
+					<input type='text' name='motd' class='form-control' value='<h1>Obrigado</h1> por usar nosso sistema, sua opnião é importante para nós'/>
+				</label>
+				</form>
+
+				<button class='btn btn-success btn-block save' onclick='save()'>Salvar</button>
+			</div>
+		</div>
+	";
+
+
+	$content.="
+	<div class='card w-50 delete-screen' style='position:absolute; z-index:2; top:25%; left:25%; display:none;'>
+		<div class='card-header'>
+			<h4 class='alert alert-danger h4'>DELETAR unidade
+			<a class='badge badge-danger' href='#' style='float:right;' onclick='hidedelete()'>X</a>
+			</h4>
+		</div>
+		<div class='card-body'>
+	";
+
+	foreach($unidades as $unidade){
+		$content.="<a class='btn btn-danger btn-block' href='crud/delete.php?id=".$unidade['id']."'>".
+		$unidade['nome']."</a>";
+	}
+
+	$content.="
+		</div>";
+
+	$content.="
+	</div>";
+
 }
+
+
 echo $header;
 echo $content;
 echo $footer;
-
-
+	
 ?>
-
