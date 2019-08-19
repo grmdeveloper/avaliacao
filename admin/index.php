@@ -230,8 +230,19 @@ elseif($_SESSION['password'] == "tec_mes1234"){
 	";
 
 	foreach($unidades as $unidade){
-		$content.="<a class='btn btn-danger btn-block' href='crud/delete.php?id=".$unidade['id']."'>".
-		$unidade['nome']."</a>";
+		$content.="
+		<form action='crud/delete.php' method='post'>
+			<input class='btn btn-danger btn-block' 
+			name='nome'
+			value='".$unidade['nome']."'
+			type='submit'></a>
+
+			<input hidden 
+			name='id'
+			value='".$unidade['id']."'
+			type='number'></a>
+		</form>
+		";
 	}
 
 	$content.="
