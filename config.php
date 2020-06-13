@@ -2,5 +2,4 @@
 
 $SITE=[
     'password'=>'teste',
-    
 ]

@@ -6,6 +6,7 @@
 	header("Pragma: no-cache"); // HTTP 1.0.
 	header("Expires: 0"); // Proxies.
 
+	require"config.php";
 	require"connection.php";
 
 	if(isset($_GET['u']))

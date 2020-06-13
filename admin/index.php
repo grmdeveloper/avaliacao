@@ -1,7 +1,7 @@
 <?php 
 
 
-
+require __DIR__."/../config.php";
 
 echo "<link href='css/style.css' type='text/css'> ";
 require"connection.php";
@@ -57,7 +57,7 @@ if(isset($_POST['password'])){
 	$_SESSION['password']=$_POST['password'];
 }
 
-if($_SESSION['password']!="tec_mes1234"){
+if($_SESSION['password']!=$SITE['password']){
 	$content="
 	<div class='text-center'>
 		<img src='../logo.jpg' width='100px'>
@@ -80,7 +80,7 @@ if($_SESSION['password']!="tec_mes1234"){
 	</div>
 	";
 }
-elseif($_SESSION['password'] == "tec_mes1234"){
+elseif($_SESSION['password'] == $SITE['password']){
 	$content="
 
 	<div>
