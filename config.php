@@ -1,0 +1,6 @@
+<?php
+
+$SITE=[
+    'password'=>'teste',
+    
+]
