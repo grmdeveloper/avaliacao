@@ -4,12 +4,10 @@
 	<head>
 		<title>Painel administrativo - AVALIAÇÕES</title>
 		<meta charset='utf-8'>
-		<link rel='stylesheet' type='text/css' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-	<script
-	  src='https://code.jquery.com/jquery-3.4.1.min.js'
-	  integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=''
-	  crossorigin='anonymous'>
-	</script>
+		<link rel='stylesheet' type='text/css' href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+		<script type='text/javascript' src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='../node_modules/jquery/dist/jquery.js' > </script>
 
 	<script type='text/javascript'>
 
@@ -26,7 +24,7 @@
 
 			$.ajax({
 				type:'POST',
-				url:'crud/create.php',
+				url:'api/create.php',
 				data:dados,
 
 				success:function(data){
@@ -55,19 +53,3 @@
 	$footer="
 	</body></html>";
 ?>
-
-<style type="text/css">
-	#menu{
-		display:inline-block;
-		list-style: none;
-	}
-	#menu li {
-		margin: 0 15px;
-		display:inline-block;
-	}#menu li:first-child{ margin:0; }
-	#menu a {
-		text-decoration: none;
-		text-transform: none;
-		color:black;
-	}
-</style>

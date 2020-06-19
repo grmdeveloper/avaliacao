@@ -1,0 +1,25 @@
+{
+  "name": "avaliacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grmdeveloper/avaliacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grmdeveloper/avaliacao/issues"
+  },
+  "homepage": "https://github.com/grmdeveloper/avaliacao#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  }
+}

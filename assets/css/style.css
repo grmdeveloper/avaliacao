@@ -1,0 +1,41 @@
+	body {
+		background-color:#fff;
+	}
+	.table{
+		align-items:left;
+	}
+	.option{
+		color:white;
+		text-align: center;
+	}
+	#excelente{
+		background-color:#431887;
+		color:#eee;
+		width:300px;
+		font-size:21pt;
+		text-shadow:1px 1px 1px black;
+	}	
+	#bom{
+		background-color:green;
+		color:#eee;
+		width:300px;
+		font-size:21pt;	
+		text-shadow:1px 1px 1px black;
+	}	
+	#regular{
+		background-color:orange;
+		color:#eee;
+		width:300px;
+		font-size:21pt;
+		text-shadow:1px 1px 1px black;
+	}	
+	#ruim{
+		background-color:red;
+		color:#eee;
+		width:300px;
+		font-size:21pt;
+		text-shadow:1px 1px 1px black;
+	}
+	form img{
+		width:60px;
+	}

@@ -1,1 +1,25 @@
-body{ font-family: arial; }
+
+*{ margin:0; padding:0; }
+body{ font-family: arial; background-color:#333; }
+
+#menu{
+	display: flex;
+	align-items:center;
+	line-height: 15px;
+	box-shadow: 2px 2px 15px gray;
+
+}
+#menu ul {
+	list-style: none;
+}
+#menu ul li{
+	position: absolute;
+	width:150px;
+	top:20px;
+	margin-left: 10px;
+}
+#menu a {
+	text-decoration: none;
+	text-transform: none;
+	color:white !important;
+}

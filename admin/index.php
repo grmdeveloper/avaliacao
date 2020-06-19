@@ -1,10 +1,10 @@
 <?php 
 
+//ini_set('display_errors',1);
 
-require __DIR__."/../config.php";
+require"../connection.php";
+require"../config.php";
 
-echo "<link href='css/style.css' type='text/css'> ";
-require"connection.php";
 if(isset($_GET['u']))
 	$uSelected = $_GET['u'];
 else $uSelected = 1;
@@ -53,14 +53,14 @@ header("Content-type:text/html; charset=utf-8");
 require"layout.php";
 
 session_start();
-if(isset($_POST['password'])){
+if(isset($_POST['password']) ){
 	$_SESSION['password']=$_POST['password'];
 }
 
 if($_SESSION['password']!=$SITE['password']){
 	$content="
 	<div class='text-center'>
-		<img src='../logo.jpg' width='100px'>
+		<img src='../assets/logo.jpg' width='100px'>
 		<div class='card w-25' style='margin:10px auto; border:1px solid #402010;'>
 			<div class='card-header h4'>
 				Login
@@ -83,17 +83,15 @@ if($_SESSION['password']!=$SITE['password']){
 elseif($_SESSION['password'] == $SITE['password']){
 	$content="
 
-	<div>
-		<img src='../logo.jpg' width='50px' style='margin-left:4%;'>
-		<ul id='menu'>
-			<li><a href='index.php'>Dashboard</a></li>
-			<li><a href='logout.php'>Sair</a></li>
+	<div id='menu'>
+		<img src='../assets/logo.jpg' width='50px' style='margin-left:4%;'>
+		<ul>
+			<li><a href='index.php'> Dashboard </a></li>
+			<li style='position:absolute; right:25px;'><a href='logout.php'>Sair</a></li>
 		</ul>
 	</div>
 
-	<h3 class='alert alert-primary h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>
-	 Dashboard
-	</h3>";
+	<h3 class='alert h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>	 Dashboard	</h3>";
 	$content.="
 	<div class='d-inline-flex justify-content-center'>
 	<div class='card w-50 text-center'>
@@ -102,7 +100,7 @@ elseif($_SESSION['password'] == $SITE['password']){
 		</div>
 
 		<div class='card-body '>
-			<form action='save.php' method='post'>
+			<form action='api/update.php' method='post'>
 			<input type='number' name='id' value='".$id."' hidden>
 				
 				<label class='w-75'>
@@ -152,7 +150,7 @@ elseif($_SESSION['password'] == $SITE['password']){
 			<span class='badge'>ID ".$id."</span>
 			<div><b class='badge'>endereço</b> 
 			<br>
-			<a href='http://".$_SERVER['HTTP_HOST']."/avaliacao/?u=".$id."' 
+			<a href='http://".$SITE['root']."?u=".$id."' 
 			target='_BLANK' class='badge'>Página de avaliação</a></div>
 
 			<div class='badge'>Atualizado em: ".$updated."</div>
@@ -161,15 +159,17 @@ elseif($_SESSION['password'] == $SITE['password']){
 	</div>";
 
 
+
+	// CARD START
 	$content.="
-	<div class='card' style='max-width:280px;'>
+	<div class='card' style='min-width:240px; max-width:280px;'>
 		<div class='card-header'>
-			<h5 class='card-title h5'>Unidades no sistema</h5>
+			<h5 class='card-title h5'>Selecionar unidade</h5>
 		</div>
 		<div class='card-body'  style='max-height:280px; overflow-y:scroll;'>
 		";
 	foreach($unidades as $unidade){
-		$content.="<a class='btn btn-dark btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
+		$content.="<a class='btn btn-warning btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";
 	}
 
 	$content.="
@@ -177,15 +177,21 @@ elseif($_SESSION['password'] == $SITE['password']){
 
 	$content.="
 	</div>";
+	//CARD END
 
+
+	//END FLEXBOX----
+	$content.="	</div>";
+	//END FLEXBOX----
+
+
+
+	//OPÇẼS CRIAR DELETAR UNIDADE
 	$content.="
-		<div class='card'>
-			<div class='card-header'>
-				<h5 class='h5'>CRUD</h5>
-			</div>
-			<div class='card-body'>
-				<button class='btn btn-primary btn-block' onclick='showform()'>Nova Unidade</button>
-				<button class='btn btn-danger btn-block' onclick='showdelete()'>Deletar Unidade</button>
+		<div style='margin:15px auto; display:block; width:50%;'>
+			<div class='btn-group w-100'>
+				<button class='btn btn-success btn-group-item' onclick='showform()'>Cadatrar nova unidade</button>
+				<button class='btn btn-danger btn-group-item' onclick='showdelete()'>Deletar unidade existente</button>
 			</div>
 		</div>";
 
@@ -209,7 +215,7 @@ elseif($_SESSION['password'] == $SITE['password']){
 				</label>		
 				<label class='w-100'>
 					Mensagem de agradecimento
-					<input type='text' name='motd' class='form-control' value='<h1>Obrigado</h1> por usar nosso sistema, sua opnião é importante para nós'/>
+					<input type='text' name='motd' class='form-control' value='Obrigado por usar nosso sistema, sua opnião é importante para nós'/>
 				</label>
 				</form>
 
@@ -218,6 +224,8 @@ elseif($_SESSION['password'] == $SITE['password']){
 		</div>
 	";
 
+	
+	// Start DELETE CARD LIST 
 	$content.="
 	<div class='card w-50 delete-screen' style='position:absolute; z-index:2; top:25%; left:25%; display:none;'>
 		<div class='card-header'>
@@ -227,10 +235,9 @@ elseif($_SESSION['password'] == $SITE['password']){
 		</div>
 		<div class='card-body'>
 	";
-
 	foreach($unidades as $unidade){
 		$content.="
-		<form action='crud/delete.php' method='post'>
+		<form action='api/delete.php' method='post'>
 			<input class='btn btn-danger btn-block' 
 			name='nome'
 			value='".$unidade['nome']."'
@@ -243,13 +250,10 @@ elseif($_SESSION['password'] == $SITE['password']){
 		</form>
 		";
 	}
-
 	$content.="
-		</div>";
-
-	$content.="
+		</div>
 	</div>";
-
+	//END DELETE CARD List
 }
 
 
