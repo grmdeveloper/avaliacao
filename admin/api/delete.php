@@ -3,7 +3,7 @@
 	ini_set('display_errors',1);
 	require "../../connection.php";
 	require "../../config.php";
-	
+
 	$id=$_POST['id'];
 	print($id);
 

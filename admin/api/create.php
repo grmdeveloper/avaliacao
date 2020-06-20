@@ -8,15 +8,17 @@ $motd = 	trim($_POST['motd']);
 
 $stmt="INSERT INTO configs (nome,titulo,motd) VALUES ('$nome','$titulo','$motd')";
 $result = $con->query($stmt);
+$id = $con->insert_id;
 
 if($result){
-	echo "Unidade cadastrada com sucesso";
-	header("refresh:3");
+	echo json_encode([
+		'message'=>'Unidade cadastrada com sucesso!',
+		'child'=>"<a class='btn btn-warning btn-block' href='?u=".$id."'>".$nome."</a>"
+	]);
 }
 
 else{
-	echo "Erro ao cadastrar";
-	header("refresh:3;");	
+	echo json_encode(['message'=>"Erro ao cadastrar"]);
 }
 
 ?>

@@ -13,6 +13,10 @@
 	</div>
 	<h3 class='alert h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>	 Dashboard	</h3>
 
+	<div id='alert' class='alert alert-warning text-center'>
+
+	</div>
+
 	<div class='d-inline-flex justify-content-center'>
 	";
 
@@ -84,7 +88,7 @@
 		<div class='card-header'>
 			<h5 class='card-title h5'>Selecionar unidade</h5>
 		</div>
-		<div class='card-body'  style='max-height:280px; overflow-y:scroll;'>
+		<div class='card-body' id='unities-card-body' style='max-height:280px; overflow-y:scroll;'>
 		";
 	foreach($unidades as $unidade){
 		$content.="<a class='btn btn-warning btn-block' href='?u=".$unidade['id']."'>".$unidade['nome']."</a>";

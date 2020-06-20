@@ -1,3 +1,4 @@
+	
 	var showform = function(){
 		$('.form-create').fadeIn(400);
 	}
@@ -14,14 +15,18 @@
 			url:'api/create.php',
 			data:dados,
 
-			success:function(data){
+			success:(data)=>{
+				let dados = JSON.parse(data);
+				$('.save').attr('disabled',false);
+				console.log(dados);
+				$('#alert').html(dados.message);
+				$('#unities-card-body').append(dados.child);
+				hideform();
+
+			},
+			fail:(data)=>{	
 				$('.save').attr('disabled',false);
 				alert(data);
-				window.location.reload();
-			},
-			fail:function(data){	
-			$('.save').attr('disabled',false);
-			alert(data);
 			}
 		})
 	}
