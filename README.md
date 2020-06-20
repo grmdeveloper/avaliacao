@@ -11,7 +11,6 @@
 		$ cd /path/to/project
 		$ npm install
 
-
 ###Acesse o painel administrativo pela url: http://localhost/path/admin###
 
 ![](/assets/excelente.png)
