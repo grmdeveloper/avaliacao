@@ -12,7 +12,7 @@
 
 	$con->close();
 
-	echo "<div style='text-align:center; width:60%; color:#431887; margin:10% auto;'>".$_POST['motd']."</div>";
+	echo "<div style='text-align:center; font-size:14pt; width:60%; color:#431887; margin:10% auto;'>".$_POST['motd']."</div>";
 	echo "<br><center><img src='assets/logo.jpg' width='220px' alt='prefeitura de mesquita' /></center>";
 	echo "<h2 style='text-align:center; color:#431887;'>Equipe de desenvolvimento da prefeitura de mesquita</h2>";
 ?>

@@ -9,7 +9,7 @@
 
 		<tr>
 			<td>
-			<form method='post' action='input.php' class='option'>	
+			<form method='post' action='assess.php' class='option'>	
 				<img src="assets/excelente.png">
 				<input type="text" name="motd" value="<?php echo $unidade->getMotd(); ?>" hidden>
 				<input type="number" name="id" value="<?php echo $unidade->getId(); ?>" hidden>
@@ -21,7 +21,7 @@
 
 		<tr>
 			<td>
-			<form method='post' action='input.php' class='option'>
+			<form method='post' action='assess.php' class='option'>
 				<img src="assets/bom.png">
 				<input type="text" name="motd" value="<?php echo $unidade->getMotd(); ?>" hidden>
 				<input type="number" name="id" value="<?php echo $unidade->getId(); ?>" hidden>
@@ -33,7 +33,7 @@
 
 		<tr>
 			<td>
-			<form method='post' action='input.php'  class='option'>
+			<form method='post' action='assess.php'  class='option'>
 				<img src="assets/regular.png">
 				<input type="text" name="motd" value="<?php echo $unidade->getMotd(); ?>" hidden>
 				<input type="number" name="id" value="<?php echo $unidade->getId(); ?>" hidden>
@@ -44,7 +44,7 @@
 		</tr>
 		<tr>
 			<td>
-			<form method='post' action='input.php' class='option'>
+			<form method='post' action='assess.php' class='option'>
 				<img src="assets/ruim.png">
 				<input type="text" name="motd" value="<?php echo $unidade->getMotd(); ?>" hidden>
 				<input type="number" name="id" value="<?php echo $unidade->getId(); ?>" hidden>

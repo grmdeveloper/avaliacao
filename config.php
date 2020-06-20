@@ -8,6 +8,6 @@ $mysql=[
 ];
 
 $SITE=[
-	'root' => 'localhost/projetos/prefeitura/avaliacao/',
+	'root' => "http://localhost/projetos/prefeitura/avaliacao/",
 	'password' => 'tec123'
 ];
