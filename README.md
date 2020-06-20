@@ -1,7 +1,7 @@
-# REQUISITOS
-*APACHE -- MYSQL -- NODE*
+## REQUISITOS
+*APACHE -- PHP -- MYSQL -- NPM*
 
-# CONFIGURANDO 
+## CONFIGURANDO 
 
 1. Salve o arquivo config.example.php como config.php
 2. Dentro do arquivo recem criado configure as credenciais do seu banco de dados Mysql na variavel **$mysql[]**, 
