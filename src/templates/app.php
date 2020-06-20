@@ -42,6 +42,7 @@
 			</form>
 			</td>
 		</tr>
+		
 		<tr>
 			<td>
 			<form method='post' action='assess.php' class='option'>

@@ -20,5 +20,5 @@
 <script type="text/javascript">
 	setTimeout(function(){
 		window.history.back();
-	}, 10000);
+	}, 7000);
 </script>

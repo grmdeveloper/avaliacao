@@ -7,7 +7,8 @@
 		<img src='../assets/logo.jpg' width='50px' style='margin-left:4%;'>
 		<ul>
 			<li><a href='index.php'> Dashboard </a></li>
-			<li style='position:absolute; right:25px;'><a href='?logout=1'>Sair</a></li>
+			<li style='position:absolute; right:25px;'>
+			<a href='".$SITE['root']."admin/index.php?logout=1'>Sair</a></li>
 		</ul>
 	</div>
 	<h3 class='alert h4 text-center' style='text-indent:100px; color:white; text-shadow:1px 1px 1px black; text-indent:25px;'>	 Dashboard	</h3>
